@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default environment" name="SoapTest" resourceRoot="" soapui-version="6.0.0" id="b7caa5ae-9383-4e6e-a2c5-ac1b46a82a98" lastOpened="2016-08-10T14:50:22.123+05:30" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SimpleWebServicePortBinding" type="wsdl" bindingName="{http://example.photon/}SimpleWebServicePortBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/eclipse-workspace/cucumberReportsTest/hello.wsdl" id="0d229cfa-0db3-4977-aea6-5cfcef2989d1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\eclipse-workspace\cucumberReportsTest\hello.wsdl"><con:part><con:url>file:\C:\eclipse-workspace\cucumberReportsTest\hello.wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://example.photon/" name="HelloService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://example.photon/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://example.photon/" schemaLocation="http://localhost:8082/SoapTest/HelloService?xsd=1"/>
+    </xsd:schema>
+  </types>
+  <message name="SayHello">
+    <part name="parameters" element="tns:SayHello"/>
+  </message>
+  <message name="SayHelloResponse">
+    <part name="parameters" element="tns:SayHelloResponse"/>
+  </message>
+  <portType name="SimpleWebService">
+    <operation name="SayHello">
+      <input wsam:Action="http://example.photon/SimpleWebService/SayHelloRequest" message="tns:SayHello"/>
+      <output wsam:Action="http://example.photon/SimpleWebService/SayHelloResponse" message="tns:SayHelloResponse"/>
+    </operation>
+  </portType>
+  <binding name="SimpleWebServicePortBinding" type="tns:SimpleWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="SayHello">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloService">
+    <port name="SimpleWebServicePort" binding="tns:SimpleWebServicePortBinding">
+      <soap:address location="http://localhost:8082/SoapTest/HelloService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8082/SoapTest/HelloService?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema version="1.0" targetNamespace="http://example.photon/" xmlns:tns="http://example.photon/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SayHello" type="tns:SayHello"/>
+  <xs:element name="SayHelloResponse" type="tns:SayHelloResponse"/>
+  <xs:complexType name="SayHello">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SayHelloResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8082/SoapTest/HelloService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="SayHello" bindingOperationName="SayHello" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="eea59279-2ce5-4de8-bfca-af7d7395bcf1"><con:settings/><con:call name="Request 1" id="9826677d-3bc7-4023-9dfe-127dbd8be41f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/SoapTest/HelloService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://example.photon/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:SayHello>
+         <name>Chanddrasekaran</name>
+      </exam:SayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.photon/SimpleWebService/SayHelloRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuiteHello" id="8498fb6c-c290-4418-a3b0-84f51bcfc616"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SayHello TestCase" searchProperties="true" id="c92dd56d-2064-4a03-ab40-e361e2ea2e07"><con:settings/><con:testStep type="request" name="SayHello" id="ce874334-f0e0-4ca2-8de3-ee1afd69bfa1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SimpleWebServicePortBinding</con:interface><con:operation>SayHello</con:operation><con:request name="SayHello" id="4392430d-ab3b-4823-bab6-3e0f26e0f259"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8082/SoapTest/HelloService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://example.photon/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:SayHello>
+         <name>chandru</name>
+      </exam:SayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" name="Contains" id="8bf03165-cf97-4cab-9411-f126aba49941"><con:configuration><token>sekar</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://example.photon/SimpleWebService/SayHelloRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>

@@ -1,0 +1,48 @@
+Status: FAILED
+Time Taken: 150
+Size: 243
+Timestamp: Mon Aug 08 12:40:14 IST 2016
+TestStep: SayHello
+
+----------------- Messages ------------------------------
+[Contains] Missing token [sekar] in Response
+
+----------------- Properties ------------------------------
+Endpoint: http://localhost:8082/SoapTest/HelloService
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Host : localhost:8082
+Accept-Encoding : gzip,deflate
+Content-Length : 265
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://example.photon/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:SayHello>
+         <name>chandru</name>
+      </exam:SayHello>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Transfer-Encoding : chunked
+Server : GlassFish Server Open Source Edition 3.1.2.2
+#status# : HTTP/1.1 200 OK
+Date : Mon, 08 Aug 2016 07:10:13 GMT
+X-Powered-By : Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle Corporation/1.7)
+Content-Type : text/xml;charset=utf-8
+
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:SayHelloResponse xmlns:ns2="http://example.photon/">
+         <return>Hello chandru!</return>
+      </ns2:SayHelloResponse>
+   </S:Body>
+</S:Envelope>
