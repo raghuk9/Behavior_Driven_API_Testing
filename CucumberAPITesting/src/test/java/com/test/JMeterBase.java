@@ -84,7 +84,7 @@ public class JMeterBase {
 	protected void setUpAndLogErrorsIfAnyInJMeter(final String jmxFileLocation, final String logFileName)
 			throws IOException, FileNotFoundException {
 		StandardJMeterEngine jmeter = setupJMeter();
-		HashTree testTree = SaveService.loadTree(new File(getProperty(JMETER_HOME) + SLASH + jmxFileLocation));
+		HashTree testTree = SaveService.loadTree(new File(jmxFileLocation));
 		jmeter.configure(testTree);
 		saveTestResultsInCSVFile(testTree, getLogFileName(logFileName));
 		jmeter.run();
@@ -108,6 +108,7 @@ public class JMeterBase {
 	}
 
 	private String getLogFileName(String logFileName) {
+		System.out.println(logFileName);
 		return logFileName + FILE_EXTENSION;
 	}
 
