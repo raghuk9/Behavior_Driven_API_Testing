@@ -53,6 +53,7 @@ Temporary Items
 ### Eclipse ###
 
 .metadata
+output/
 bin/
 tmp/
 *.tmp

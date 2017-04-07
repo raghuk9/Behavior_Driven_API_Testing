@@ -13,7 +13,7 @@ import cucumber.api.java.en.When;
 public class WishlistScenario  extends JMeterBase {
 
 	private static final String LOGFILE_NAME = WishlistScenario .class.getSimpleName();
-	protected static final String JMX_FILE_LOCATION = "C:/Backup/workspace/ss/cucumberReportsTest/jmx/WishlistScenario.jmx";
+	protected static final String JMX_FILE_LOCATION = "C:/git_projects/raghuk9bdd/Behavior_Driven_API_Testing/CucumberAPITesting/jmx/WishlistScenario.jmx";
 	private static final String REGULAR_EXPRESSION_NUMBER = "(\\d+)";
 
 	@Given("^I want to execute WishlistScenario.jmx$")

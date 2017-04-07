@@ -21,7 +21,7 @@ public class AddingToGuestCart extends JMeterBase {
 	
 
 	private static final String LOGFILE_NAME = AddingToGuestCart.class.getSimpleName();
-	protected static final String JMX_FILE_LOCATION = "C:/Backup/workspace/ss/cucumberReportsTest/jmx/AddingToGuestCartScenario.jmx";
+	protected static final String JMX_FILE_LOCATION = "C:/git_projects/raghuk9bdd/Behavior_Driven_API_Testing/CucumberAPITesting/jmx/AddingToGuestCartScenario.jmx";
 	private static final String REGULAR_EXPRESSION_NUMBER = "(\\d+)";
 
 	@Given("^I want to execute BrowsingProducts.jmx$")
